@@ -173,7 +173,7 @@ if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--dataset',
 						type=str,
-						choices=["semeval2015", "semeval2016"],
+						choices=["semeval2015", "semeval2016", 'mock_data'],
 						help='dataset, as a folder name, you can choose from semeval2015 and semeval2016')
 	args = parser.parse_args()
 
@@ -183,9 +183,12 @@ if __name__ == '__main__':
 	if '2015' in args.dataset:
 		train_file = 'ABSA_15_Restaurants_Train'
 		test_file = 'ABSA_15_Restaurants_Test'
-	else:
+	elif '2016' in args.dataset:
 		train_file = 'ABSA_16_Restaurants_Train'
 		test_file = 'ABSA_16_Restaurants_Test'
+	else:
+		train_file = 'df_mock_train'
+		test_file = 'df_mock_test'
 
 	train_output = 'train_TAS'
 	test_output = 'test_TAS'
