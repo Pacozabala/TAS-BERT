@@ -1,0 +1,7 @@
+torch
+torchvision
+tensorflow
+pytorch-crf
+numpy
+nltk
+scikit-learn
