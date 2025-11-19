@@ -173,8 +173,8 @@ if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--dataset',
 						type=str,
-						choices=["semeval2015", "semeval2016", 'mock_data'],
-						help='dataset, as a folder name, you can choose from semeval2015 and semeval2016')
+						default='semeval2015',
+						help='dataset, as a folder name, you can choose from semeval2015 and semeval2016, or input the custom folder name')
 	args = parser.parse_args()
 
 	path = args.dataset + '/three_joint'
@@ -187,8 +187,8 @@ if __name__ == '__main__':
 		train_file = 'ABSA_16_Restaurants_Train'
 		test_file = 'ABSA_16_Restaurants_Test'
 	else:
-		train_file = 'df_mock_train'
-		test_file = 'df_mock_test'
+		train_file = 'customdata_train'
+		test_file = 'customdata_test'
 
 	train_output = 'train_TAS'
 	test_output = 'test_TAS'
